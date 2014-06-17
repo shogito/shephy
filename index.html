@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="shephyApp">
+    <head>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/angular.bootstrap/0.11.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-animate.min.js"></script>        
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    
+        <link href="css/animate.css" rel="stylesheet">
+        <script src="lib/genEventCards.js"></script>
+        <script src="lib/piler.js"></script>
+        <script src="lib/player.js"></script>
+        <script src="lib/shephyCtrl.js"></script>
+
+    
+    </head>
+    <body ng-controller="ShephyCtrl">
+        <div class="container">
+            <div class="row">
+                <h4>hand</h4>
+                <div class="col-lg-1 card" ng-repeat="card in hand" ng-click="play($index)">{{ card.name }}</div>
+            </div>
+            <div class="row">
+                <h4>crowd</h4>
+                <div class="col-lg-1" ng-repeat="crowd in shephyObj.crowd">{{ crowd.openAll()[0].rank }}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1" ng-repeat="crowd in shephyObj.crowd">{{ crowd.length() }}s</div>
+            </div>
+            <div class="row">
+                <h4>field</h4>
+                <div class="card col-lg-1" ng-repeat="field in shephyObj.field.openAll()">{{ field.rank }}</div>    
+            </div>
+            <div class="row">
+                <div class="col-lg-3"><h4>trash num:</h4>{{ shephyObj.shepherd.trash.length }}</div>
+                <div class="col-lg-3"><h4>deck num:</h4>{{ shephyObj.event.length() }}</div>
+                <div class="col-lg-3"><h4>sheeps:</h4>{{}}</div>
+            </div>
+        </div>
+    </body>
+</html>

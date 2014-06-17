@@ -1,0 +1,54 @@
+// というなのメモ
+
+// testCase
+
+// 初期化
+// 依存
+// piler.js
+// player.js
+// genEventCards.js
+
+
+var deck = new piler(genEventCards());
+var p = new player(deck, [], [], []);
+
+// playテスト
+deck.length();
+p.drawEventCards();
+p.hand;
+p.play(0);
+deck.length();
+p.trash
+
+
+
+// すにぺっと
+
+// カード内のアクションをplayerのアクションへ被せる
+function(p, ec){
+    p.action = ec.action
+}
+
+// 子オブジェクトが親オブジェクトを知る方法(parentいれとけ)
+// 存在領域が変化した時にparentを更新するインターフェイスを書く
+
+// オブジェクト比較のすげぇ大事なこと
+var aaa = [1,2,3]
+var bbb = [1,2,3]
+
+aaa === bbb // => False
+JSON.stringify(aaa) === JSON.stringify(bbb) // => True
+
+var ary = [aaa,bbb]
+ary.indexOf(aaa) // => 0
+ary.indexOf(bbb) // => 1
+
+
+// angularjsでデータバインドできない
+$applyを使えし
+
+// これでいけるっぽい
+要素をクリックしてデバッグモードの$0にキャプチャ(?)する
+scope = angular.element($0).scope()
+scope.$apply(function(){ scope.$scope.hand = shepherd.draw() } )
+

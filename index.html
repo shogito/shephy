@@ -12,6 +12,29 @@
         <script src="lib/piler.js"></script>
         <script src="lib/player.js"></script>
         <script src="lib/shephyCtrl.js"></script>
+        
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title">I'm a modal!</h3>
+            </div>
+            <div class="modal-body">
+                <div ng-repeat="item in items" ng-show="multi">
+                    <input type="checkbox" ng-model="checkedItems[$index]" id="check_{{$index}}" />
+                    <label for="check_{{$index}}">{{item}}</label>
+                </div>
+                <ul>
+                    <li ng-repeat="item in items" ng-hide="multi">
+                         <a ng-click="selected.item = item">{{ item }}</a>
+                    </li>
+                </ul>
+                Selected: <b>{{ selected.item }}</b>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+
 
     
     </head>
@@ -23,19 +46,20 @@
             </div>
             <div class="row">
                 <h4>crowd</h4>
-                <div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 " ng-repeat="crowd in shephyObj.crowd">{{ crowd.openAll()[0].rank }}</div>
+                <div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 " ng-repeat="crowd in shepherd.crowd">{{ crowd.openAll()[0].rank }}</div>
             </div>
             <div class="row">
-                <div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 " ng-repeat="crowd in shephyObj.crowd">{{ crowd.length() }}s</div>
+                <div class="col-lg-1 col-sm-1 col-xs-1 col-md-1 " ng-repeat="crowd in shepherd.crowd">{{ crowd.length() }}s</div>
             </div>
             <div class="row">
                 <h4>field</h4>
-                <div class="card col-lg-1 col-sm-1 col-xs-1 col-md-1 " ng-repeat="field in shephyObj.field.openAll()">{{ field.rank }}</div>    
+                <div class="card col-lg-1 col-sm-1 col-xs-1 col-md-1 " ng-repeat="field in shepherd.field.openAll()">{{ field.rank }}</div>    
             </div>
             <div class="row">
-                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>trash num:</h4>{{ shephyObj.shepherd.trash.length }}</div>
-                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>deck num:</h4>{{ shephyObj.event.length() }}</div>
-                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>sheeps:</h4>{{ }}</div>
+                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>trash num:</h4>{{ shepherd.trash.length }}</div>
+                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>deck num:</h4>{{ shepherd.deck.length() }}</div>
+                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>sheeps:</h4>{{ sheeps }}</div>
+                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>sheeps:</h4>{{ enemys }}</div>
             </div>
         </div>
     </body>

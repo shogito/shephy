@@ -56,10 +56,12 @@
                 <div class="card col-lg-1 col-sm-1 col-xs-1 col-md-1 " ng-repeat="field in shepherd.field.openAll()">{{ field.rank }}</div>    
             </div>
             <div class="row">
-                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>trash num:</h4>{{ shepherd.trash.length }}</div>
-                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>deck num:</h4>{{ shepherd.deck.length() }}</div>
-                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>sheeps:</h4>{{ sheeps }}</div>
-                <div class="col-lg-3 col-sm-3 col-xs-3 col-md-3 "><h4>sheeps:</h4>{{ enemys }}</div>
+                <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 "><h4>trash num:</h4>{{ shepherd.trash.length }}</div>
+                <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 "><h4>removed num:</h4>{{ shepherd.removed.length }}</div>
+                <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 "><h4>deck num:</h4>{{ shepherd.deck.length() }}</div>
+                <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 "><h4>sheeps:</h4>{{ sheeps }}</div>
+                <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 "><h4>enemys:</h4>{{ enemys }}</div>
+
             </div>
         </div>
     </body>

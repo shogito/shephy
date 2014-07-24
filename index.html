@@ -15,22 +15,15 @@
         
         <script type="text/ng-template" id="myModalContent.html">
             <div class="modal-header">
-                <h3 class="modal-title">I'm a modal!</h3>
+                <h3 class="modal-title">プレイ：{{card.name}}</h3>
+                <h4>{{card.description}}<h4>
             </div>
             <div class="modal-body">
-                <div ng-repeat="item in items" ng-show="multi">
-                    <input type="checkbox" ng-model="checkedItems[$index]" id="check_{{$index}}" />
-                    <label for="check_{{$index}}">{{item}}</label>
-                </div>
-                <ul>
-                    <li ng-repeat="item in items" ng-hide="multi">
-                         <a ng-click="selected.item = item">{{ item }}</a>
-                    </li>
-                </ul>
-                Selected: <b>{{ selected.item }}</b>
+                <div ng-repeat="item in items">
+                    <label class="btn btn-default" ng-class="{active: selected[$index]}" for="id_{{$index}}" ng-checked="selected[$index]" ng-click="choice($index)">{{item.name}}</label>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" ng-click="ok()">OK</button>
+                <button class="btn" ng-class="{'btn-primary': valid(), 'disabled btn-default': !valid() }" ng-click="ok()">OK</button>
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
         </script>

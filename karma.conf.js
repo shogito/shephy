@@ -21,7 +21,8 @@ module.exports = function(config) {
         'js/genEventCards.js',
         'js/player.js',
         'js/shephyCtrl.js',
-        'spec/*js'
+        'spec/*js',
+        'index.html'
     ],
 
 

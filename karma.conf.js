@@ -16,8 +16,11 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js',
+        'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js',
         'https://rawgit.com/shogito/piler/master/js/piler.js',
-        'js/*js',
+        'js/genEventCards.js',
+        'js/player.js',
+        'js/shephyCtrl.js',
         'spec/*js'
     ],
 

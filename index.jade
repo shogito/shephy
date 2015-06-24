@@ -1,0 +1,20 @@
+doctype html
+html(ng-app="ShephyApp")
+  head
+    meta(charset='UTF-8')
+    title うめよふやせよ
+    link(rel='stylesheet', href='./bower_components/materialize/dist/css/materialize.css')
+  body(ng-controller="ShephyCtrl")
+  
+    {{app}} 
+   
+    // core 
+    script(src='./bower_components/jquery/dist/jquery.js', charset='UTF-8')
+    script(src='./bower_components/lodash/lodash.js', charset='UTF-8')
+    script(src='./bower_components/materialize/dist/js/materialize.js', charset='UTF-8')
+    script(src='./bower_components/angular/angular.js', charset='UTF-8')
+    script(src='./bower_components/angular-ui-router/release/angular-ui-router.js', charset='UTF-8')
+    script(src='./bower_components/angular-materialize/src/angular-materialize.js', charset='UTF-8')
+    
+    // shephy ctr
+    script(src='./controllers/shephy.js', charset='UTF-8')
